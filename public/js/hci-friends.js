@@ -10,6 +10,7 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
+	$(".name").click(Click);
 }
 
 function anagrammedName(name) {
@@ -43,4 +44,12 @@ function anagrammedName(name) {
 		console.log(name + " not known for anagramming.");
 		return name;
 	}
+}
+
+function Click(e) {
+	e.preventDefault();
+	var name = $(this).text();
+	var nName = anagrammedName(name);
+	console.log(nName);
+	$(this).text(nName);
 }
